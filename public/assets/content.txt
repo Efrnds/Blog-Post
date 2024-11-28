@@ -1,0 +1,18 @@
+Título: Pode ser objetivo, fazendo referência ao assunto, ou subjetivo 
+Sobre ou quem somos: Resumo do que trata o blog 
+Publicações: Organizadas no centro do blog, de forma cronológica inversa, com os textos mais recentes em destaque 
+Horários e datas: Acompanham as publicações 
+Assinaturas: Quando o blog tem mais de um escritor, os posts podem ter assinaturas 
+Perfil do autor: Geralmente aparece nas laterais do blog 
+Contatos: Geralmente aparece nas laterais do blog 
+Comentários: Uma ferramenta que permite aos leitores comentarem as postagens 
+
+
+TITULO: O que é a metodologia agil SAFe?
+
+O metodo Scaled Agile Framework (SAFe) é uma metodo agil para adicionar boas praticas ageis em empresas, e projetos sendo eles de pequena ou grande escala, esse framework ajuda a incorporar processos à medida que o projeto cresce, obtendo alta escalabilidade.
+
+SAFe foi lançado em 2011 por Dean Leffingwell e Drew Jemilo. Nesse tempo era comum ser utilizado metodos mais tradicionais, e a medida que mercado mudava, era necessario novas ferramentas e frameworks para ajudar as empresas a resolver novos problemas, dessa forma Leffingwell e Jemilo criaram o modelo SAFe.
+
+Essa metodologia facilitou muito organizações a desenvolverem novos produtos e sistemas que atendessem mais facilmente as necessidade dos clientes, implementando o framework SAfe para definir funções, identificar dependencias, e dar estrutura ao seu fluxo de trabalho e impulsionar as praticas ageis.
+
