@@ -4,7 +4,7 @@ export default function Profile() {
   return (
     <div className="flex">
       <Image
-        className="w-20 my-auto rounded-full"
+        className="justify-center w-16 my-auto rounded-full"
         src="/images/homidascarca.jpg"
         width={100}
         height={100}
