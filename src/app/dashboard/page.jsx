@@ -76,7 +76,7 @@ export default function Page() {
             description={"Geralmente aparece nas laterais do blog"}
           />
           <ComponenteCard
-            id={"#contacts"}
+          id={"#contacts"}
             title={"Contatos"}
             description={"Geralmente aparece nas laterais do blog"}
           />

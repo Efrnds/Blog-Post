@@ -36,7 +36,7 @@ const data = {
   ],
 };
 
-export default function AppSidebar({ ...props }) {
+export function AppSidebar({ ...props }) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
