@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,8 +9,23 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Link } from "react-router-dom";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export function LoginForm() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  const handleLogin = () => {
+    // Simula login e salva no localStorage
+    if (username && password) {
+      localStorage.setItem("isLoggedIn", "true");
+      router.push("/home"); // Redireciona para a home
+    }
+  };
+
   return (
     <Card className="max-w-sm mx-auto">
       <CardHeader>
@@ -29,6 +43,8 @@ export function LoginForm() {
               type="email"
               placeholder="m@example.com"
               required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="grid gap-2">
@@ -38,10 +54,10 @@ export function LoginForm() {
                 Forgot your password?
               </Link>
             </div>
-            <Input id="password" type="password" required />
+            <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <Button>
-            <Link href="../dashboard" type="submit" className="w-full">
+            <Link to="/index" type="submit" className="w-full">
               Login
             </Link>
           </Button>

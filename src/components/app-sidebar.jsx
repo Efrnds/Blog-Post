@@ -55,7 +55,7 @@ export function AppSidebar({ ...props }) {
               {data.navMain.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild isActive={item.isActive}>
-                    <Link href={item.url} onClick={handleLinkClick}>{item.title}</Link>
+                    <Link href={item.url} onClick={handleLinkClick} basename="">{item.title}</Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -65,7 +65,7 @@ export function AppSidebar({ ...props }) {
       </SidebarContent>
       <SidebarFooter>
         <Button>
-          <Link href="./login" onClick={handleLinkClick}>Logout</Link>
+          <Link href="./login" onClick={handleLinkClick} basename="">Logout</Link>
         </Button>
       </SidebarFooter>
       <SidebarRail />

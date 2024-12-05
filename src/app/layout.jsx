@@ -1,6 +1,7 @@
 "use client";
-import localFont from "next/font/local";
-import "./globals.css";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+
 import { AppSidebar } from "@/components/app-sidebar";
 import {
   SidebarInset,
@@ -8,7 +9,6 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
-import { usePathname } from "next/navigation";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,30 +16,32 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const page = pathname.query;
+  const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Verifica se o usuário está logado no localStorage
+    const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(loggedIn);
+
+    // Se não estiver logado, redireciona para a página de login
+    if (!loggedIn) {
+      router.push("/login");
+    }
+  }, [router]);
+
+  // Enquanto a verificação de login está em andamento, retorna null para evitar exibir conteúdo indesejado
+  if (isLoggedIn === null) {
+    return <p>Carregando...</p>; // Você pode exibir um "Carregando..." ou algo mais amigável
+  }
 
   return (
-    <html>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {pathname !== "/login" ? (
-          <SidebarProvider>
+    <div className="flex flex-col h-screen bg-slate-300 font-Urbanist-Regular">
+      <SidebarProvider>
+        {isLoggedIn && (
+          <>
             <AppSidebar />
             <SidebarInset>
               <header className="sticky top-0 flex items-center h-16 gap-2 px-4 bg-white border-b shrink-0 dark:bg-neutral-950">
@@ -49,21 +51,17 @@ export default function RootLayout({ children }) {
                   <BreadcrumbList>
                     <BreadcrumbSeparator className="hidden md:block" />
                     <BreadcrumbItem>
-                      <BreadcrumbPage>{page || "Home"}</BreadcrumbPage>
+                      <BreadcrumbPage>home</BreadcrumbPage>
                     </BreadcrumbItem>
                   </BreadcrumbList>
                 </Breadcrumb>
               </header>
-              <VisuallyHidden>
-                <div>Conteúdo</div>
-              </VisuallyHidden>
-              {children}
             </SidebarInset>
-          </SidebarProvider>
-        ) : (
-          children
+          </>
         )}
-      </body>
-    </html>
+      </SidebarProvider>
+      {children}
+      {/* Footer */}
+    </div>
   );
 }
