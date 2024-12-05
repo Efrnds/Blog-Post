@@ -18,7 +18,7 @@ export default function App() {
             <Sidebar />
           )}
           </div>
-        <main className={"col-span-5 py-4 pr-4"}>
+        <main className={"col-span-5 p-4"}>
           <Routes>
             <Route
               path="/"
