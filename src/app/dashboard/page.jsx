@@ -1,12 +1,19 @@
+"use client";
 import { AppSidebar } from "@/components/app-sidebar";
+import Link from "next/link";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
 import ComponenteCard from "@/components/componenteCard";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -14,8 +21,13 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { useRouter } from "next/navigation";
+import { Factory, Github } from "lucide-react";
 
 export default function Page() {
+  const router = useRouter();
+  const page = router.query;
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -25,14 +37,9 @@ export default function Page() {
           <Separator orientation="vertical" className="h-4 mr-2" />
           <Breadcrumb>
             <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#title">
-                  Building Your Application
-                </BreadcrumbLink>
-              </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                <BreadcrumbPage>{page || "Home"}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -41,15 +48,45 @@ export default function Page() {
           <ComponenteCard
             id="title"
             href={"#title"}
-            title={"Título"}
+            title={"Método Ágil SAFe"}
+            className={"text-2xl"}
             description={
-              "Pode ser objetivo, fazendo referência ao assunto, ou subjetivo"
+              <div className="flex flex-col gap-4">
+                <p>
+                  Este blog foi criado com o intuito de explicar o que é o
+                  método ágil SAFe, e como ele pode ser utilizado em empresas de
+                  pequeno e grande porte, sinta-se a vontade para nos dar uma
+                  estrelinha no repositório{" "}
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="https://github.com/Efrnds/blogpost"
+                  >
+                    aqui
+                  </Link>{" "}
+                  e compartilhar com seus amigos.
+                </p>
+                <Link href="/SAFe" id={"#postagens"}>
+                  <h1 className="text-xl">Postagens</h1>
+                  <div className="flex w-32 h-32 p-2 border rounded-md shadow-md">
+                    <p className="w-full my-auto font-bold text-center ">
+                      SAFe
+                    </p>
+                  </div>
+                </Link>
+              </div>
             }
           />
           <ComponenteCard
             id={"#about"}
             title={"Sobre ou quem somos"}
-            description={"Resumo do que trata o blog"}
+            description={
+              <>
+                <p>
+                  Resumo do que trata o blog <br></br>
+                  asdfadgjf
+                </p>
+              </>
+            }
           />
           <ComponenteCard
             id={"#publications"}
@@ -76,7 +113,7 @@ export default function Page() {
             description={"Geralmente aparece nas laterais do blog"}
           />
           <ComponenteCard
-          id={"#contacts"}
+            id={"#contacts"}
             title={"Contatos"}
             description={"Geralmente aparece nas laterais do blog"}
           />

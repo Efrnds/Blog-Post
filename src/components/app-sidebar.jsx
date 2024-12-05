@@ -1,19 +1,13 @@
 import * as React from "react";
-import { ChevronRight } from "lucide-react";
-
 import { SearchForm } from "@/components/search-form";
 import Profile from "@/components/Profile";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Button } from "./ui/button";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -58,6 +52,11 @@ export function AppSidebar({ ...props }) {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <Button>
+          <Link href="../login">Logout</Link>
+        </Button>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );
