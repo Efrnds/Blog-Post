@@ -1,18 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
+import { useState } from "react";
 import About from "./About";
 import Login from "./Login";
-import { useState, useEffect } from "react";
+import Home from "./home";
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsLogin(true);
-    }
-  }, []);
 
   return (
     <BrowserRouter>
@@ -21,7 +14,7 @@ export default function App() {
           path="/"
           element={
             isLogin ? (
-              <Home token={localStorage.getItem("token")} />
+              <Home />
             ) : (
               <Login setIsLogin={setIsLogin} />
             )
@@ -31,13 +24,16 @@ export default function App() {
           path="/about"
           element={
             isLogin ? (
-              <About token={localStorage.getItem("token")} />
+              <About />
             ) : (
               <Login setIsLogin={setIsLogin} />
             )
           }
         />
-        <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
+        <Route
+          path="/login"
+          element={<Login setIsLogin={setIsLogin} />}
+        />
       </Routes>
     </BrowserRouter>
   );
