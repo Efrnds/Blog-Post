@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Input, GreenButton } from "lib-texsa";
+import { Input, BlueButton } from "lib-texsa";
 export default function Login({ setIsLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,8 +15,8 @@ export default function Login({ setIsLogin }) {
   };
 
   return (
-    <div className="flex w-screen h-screen">
-      <div className="flex flex-col w-1/2 gap-16 p-4 m-auto rounded-lg bg-slate-300 text-slate-600">
+    <div className="flex w-full h-[100vh] place-content-center">
+      <div className="flex flex-col w-2/3 gap-16 p-4 m-auto bg-white border rounded-lg shadow-md md:w-1/2 text-slate-600">
         <div className="flex flex-col gap-2">
           <img
             src="/logo.png"
@@ -26,21 +26,24 @@ export default function Login({ setIsLogin }) {
           <Input
             type="text"
             label="Login"
-            placeholder="Username"
+            placeholder="Insira seu e-mail ou nome de usuário"
             value={username}
-            customStyles={"lg:h-12"}
+            customStyles={
+              "lg:h-12 hover:border-blue-500 transition focus:border-blue-500"
+            }
             onChange={(e) => setUsername(e.target.value)}
           />
           <Input
-            text="whatsapp"
-            label="Password"
+            label="Senha"
             value={password}
-            placeholder="Password"
-            customStyles={"lg:h-12"}
+            placeholder="Senha"
+            customStyles={
+              "lg:h-12 hover:border-blue-500 transition focus:border-blue-500"
+            }
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <GreenButton
+        <BlueButton
           text={"Fazer Login"}
           customStyles={"w-fit lg:w-48 lg:text-lg m-auto"}
           onClick={handleLogin}

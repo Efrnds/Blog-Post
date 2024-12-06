@@ -3,24 +3,18 @@ import PropTypes from "prop-types";
 
 const Sidebar = ({ isOpen, onClose }) => {
   return (
-    <>
-      {/* Overlay */}
-      <div
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
-          isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        } md:hidden`}
-        onClick={onClose}
-      ></div>
-
+    <div
+      className={`fixed inset-0 z-40 transition-opacity duration-300 ${
+        isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      }`}
+      onClick={onClose}
+    >
       {/* Sidebar */}
       <div
-        className={`fixed top-0 bottom-0 left-0 z-50 flex flex-col h-full p-4 bg-white shadow-lg w-64 transition-transform duration-300 ease-in-out ${
-          isOpen
-            ? "translate-x-0 md:translate-x-0"
-            : "-translate-x-64 md:-translate-x-64"
+        className={`absolute top-0 bottom-0 left-0 z-50 flex flex-col h-full p-4 bg-white shadow-lg w-64 transition-transform duration-300 ease-in-out overflow-auto ${
+          isOpen ? "translate-x-0 md:translate-x-0" : "-translate-x-64 md:-translate-x-64"
         }`}
+        onClick={(e) => e.stopPropagation()} // Impede o clique dentro da sidebar de fechar a mesma
       >
         <div className="flex justify-between">
           <h2 className="my-auto text-xl font-bold">Menu</h2>
@@ -61,7 +55,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           Logout
         </a>
       </div>
-    </>
+    </div>
   );
 };
 

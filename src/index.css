@@ -4,15 +4,17 @@
 
 body {
   background-color: #e2e8f0;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
 }
 
-
-h1{
+h1 {
   font-size: 1.2rem;
   font-weight: 700;
   color: #2d3748;
   margin-bottom: 1rem;
 }
-p{
+p {
   font-size: large;
 }
