@@ -110,18 +110,29 @@ export default function App() {
                     }`}
                     onClick={closeSidebar} // Fecha a sidebar ao clicar no main
                   >
-                    <div className="h-full" onClick={(e) => e.stopPropagation()}>
+                    <div
+                      className="h-full"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <Routes>
                         <Route
                           path="/"
                           element={
-                            isLogin ? <Home /> : <Login setIsLogin={setIsLogin} />
+                            isLogin ? (
+                              <Home />
+                            ) : (
+                              <Login setIsLogin={setIsLogin} />
+                            )
                           }
                         />
                         <Route
                           path="/metodo-safe"
                           element={
-                            isLogin ? <Safe /> : <Login setIsLogin={setIsLogin} />
+                            isLogin ? (
+                              <Safe />
+                            ) : (
+                              <Login setIsLogin={setIsLogin} />
+                            )
                           }
                         />
                         <Route
@@ -132,42 +143,51 @@ export default function App() {
                     </div>
                   </main>
                   {isLogin && (
-                    <footer className="flex flex-col w-full gap-2 p-4 text-center transition bg-white border shadow-lg">
-                      <div className="flex justify-between w-full">
-                        <p className="text-sm text-slate-600">AGILE ©2024 </p>
-                        <p className="text-sm text-slate-600">
-                          TODOS OS DIREITOS RESERVADOS
-                        </p>
+                    <footer className="bg-gray-800 text-white py-6">
+                    <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                      {}
+                      <div className="text-xs sm:text-sm text-center sm:text-left">
+                        <p>AGILE ©2024 | TODOS OS DIREITOS RESERVADOS</p>
                       </div>
-                      <div className="flex justify-between w-full">
-                        <div className="text-left">
-                          <p className="text-sm font-semibold">HORA LOCAL</p>
-                          <p className="text-xs">{time}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-sm font-semibold">ULTIMO UPDATE</p>
-                          <p className="text-xs">{lastUpdated}</p>
-                        </div>
-                      </div>
-                      <div className="mx-auto text-sm">
+                  
+                      {}
+                      <div className="text-xs sm:text-sm text-right">
                         <p>
-                          desenvolvido por{" "}
+                          Esse projeto foi desenvolvido por:{" "}
                           <a
-                            href="www.github.com/cauadsm"
-                            className="text-blue-500 transition hover:drop-shadow-sm hover:text-blue-700"
+                            href="https://www.github.com/cauadsm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:text-blue-600"
                           >
                             @cauadsm
                           </a>{" "}
                           e{" "}
                           <a
-                            href="www.github.com/efrnds"
-                            className="text-blue-500 transition hover:drop-shadow-sm hover:text-blue-700"
+                            href="https://www.github.com/efrnds"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:text-blue-600"
                           >
                             @efrnds
                           </a>
                         </p>
                       </div>
-                    </footer>
+                    </div>
+                  
+                    {}
+                    <div className="max-w-7xl mx-auto px-6 flex justify-end text-xs sm:text-sm text-right mt-4">
+                      <div className="mr-6">
+                        <p className="font-semibold">HORA LOCAL</p>
+                        <p>{time}</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold">ÚLTIMO UPDATE</p>
+                        <p>{new Date(lastUpdated).toLocaleDateString("pt-BR")}</p> {/* Formatação da data para DD/MM/AAAA */}
+                      </div>
+                    </div>
+                  </footer>
+                  
                   )}
                 </div>
               </>
