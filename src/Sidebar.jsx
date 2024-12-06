@@ -5,18 +5,22 @@ const Sidebar = ({ isOpen, onClose }) => {
   return (
     <div
       className={`fixed inset-0 z-40 transition-opacity duration-300 ${
-        isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        isOpen
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       }`}
       onClick={onClose}
     >
       {/* Sidebar */}
       <div
         className={`absolute top-0 bottom-0 left-0 z-50 flex flex-col h-full p-4 bg-white shadow-lg w-64 transition-transform duration-300 ease-in-out overflow-auto ${
-          isOpen ? "translate-x-0 md:translate-x-0" : "-translate-x-64 md:-translate-x-64"
+          isOpen
+            ? "translate-x-0 md:translate-x-0"
+            : "-translate-x-64 md:-translate-x-64"
         }`}
         onClick={(e) => e.stopPropagation()} // Impede o clique dentro da sidebar de fechar a mesma
       >
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <h2 className="my-auto text-xl font-bold">Menu</h2>
           <img src="/logo.png" alt="logo do site" className="w-16 lg:w-20" />
         </div>
@@ -29,7 +33,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               Home
             </Link>
             <Link
-              to="/sobre"
+              to="/not-found"
               className="transition hover:text-sky-500 hover:drop-shadow-sm"
             >
               Sobre
@@ -41,7 +45,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               Metodo-safe
             </Link>
             <Link
-              to="/contato"
+              to="/not-found"
               className="transition hover:text-sky-500 hover:drop-shadow-sm"
             >
               Contato

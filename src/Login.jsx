@@ -15,8 +15,8 @@ export default function Login({ setIsLogin }) {
   };
 
   return (
-    <div className="flex w-full h-[100vh] place-content-center">
-      <div className="flex flex-col w-2/3 gap-16 p-4 m-auto bg-white border rounded-lg shadow-md md:w-1/2 text-slate-600">
+    <div className="flex-1 w-full h-full mx-auto border place-content-center">
+      <div className="flex flex-col w-full gap-16 p-4 m-auto bg-white border rounded-lg shadow-md md:w-1/2 text-slate-600">
         <div className="flex flex-col gap-2">
           <img
             src="/logo.png"

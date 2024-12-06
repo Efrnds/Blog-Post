@@ -1,11 +1,12 @@
 import Card from "./Card.jsx";
 import PropagandaHorizontal from "./PropagandaHorizontal.jsx";
 import PropagandaTexto from "./PropagandaTexto.jsx";
+import PropagandaVertical from "./PropagandaVertical.jsx";
 
 export default function Safe() {
   return (
-    <div className="m-4">
-      <Card>
+    <div className="grid flex-1 grid-cols-5 gap-4 m-4">
+      <Card className="flex flex-col col-span-5 gap-4 lg:col-span-4">
         <h1>SAFe: A Escalada da Agilidade nas Organizações</h1>
         <hr />
         <div className="mt-4">
@@ -144,7 +145,9 @@ export default function Safe() {
             para questões estratégicas.
           </p>
           <br />
-          <PropagandaHorizontal />
+          <div className="overflow-hidden rounded-md">
+            <PropagandaHorizontal />
+          </div>
           <br />
           <h1>Conclusão</h1>
           <p>
@@ -164,6 +167,10 @@ export default function Safe() {
           </p>
         </div>
       </Card>
+      <div className="flex-col hidden gap-48 my-48 overflow-hidden lg:flex">
+        <PropagandaVertical imgPath="/adVertical2.jpg" />
+        <PropagandaVertical imgPath="/adVertical.jpg" />
+      </div>
     </div>
   );
 }
