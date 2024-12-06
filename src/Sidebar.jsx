@@ -8,7 +8,10 @@ const Sidebar = ({ isOpen }) => {
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <h2 className="mb-4 text-xl font-bold">Menu</h2>
+      <div className="flex justify-between">
+        <h2 className="my-auto text-xl font-bold">Menu</h2>
+        <img src="/logo.png" alt="logo do site" className="w-16 lg:w-20" />
+      </div>
       <div className="flex-1">
         <div className="flex flex-col gap-2 text-sm text-sky-700">
           <Link
