@@ -22,10 +22,7 @@ export default function Safe() {
             contínua.
           </p>
           <br />
-          <img
-            className="w-1/2 mx-auto"
-            src="public/img1.svg"
-          />
+          <img className="w-1/2 mx-auto" src="/img1.svg" />
 
           <br />
           <h1>O que é o SAFe?</h1>
@@ -187,7 +184,7 @@ export default function Safe() {
             </li>
           </ul>
           <h1>Conclusão</h1>
-          <img className="mx-auto" src="public/img2.png" />
+          <img className="mx-auto" src="/img2.png" />
 
           <p>
             O SAFe oferece uma abordagem sólida e estruturada para empresas que
