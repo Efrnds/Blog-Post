@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-
+import { Input, GreenButton } from "lib-texsa";
 export default function Login({ setIsLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,21 +15,37 @@ export default function Login({ setIsLogin }) {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
+    <div className="flex w-screen h-screen">
+      <div className="flex flex-col w-1/2 gap-16 p-4 m-auto rounded-lg bg-slate-300 text-slate-600">
+        <div className="flex flex-col gap-2">
+          <img
+            src="/logo.png"
+            alt="logo do site"
+            className="w-32 m-auto lg:w-48"
+          />
+          <Input
+            type="text"
+            label="Login"
+            placeholder="Username"
+            value={username}
+            customStyles={"lg:h-12"}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input
+            text="whatsapp"
+            label="Password"
+            value={password}
+            placeholder="Password"
+            customStyles={"lg:h-12"}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <GreenButton
+          text={"Fazer Login"}
+          customStyles={"w-fit lg:w-48 lg:text-lg m-auto"}
+          onClick={handleLogin}
+        />
+      </div>
     </div>
   );
 }

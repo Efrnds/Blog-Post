@@ -25,15 +25,21 @@ export default function App() {
             isSidebarOpen ? "ml-64" : "ml-0"
           }`}
         >
-          <div className="flex justify-between p-2 bg-white shadow-md ">
-            <button
-              className="p-2 my-auto text-blue-500 transition-all duration-300 bg-white border rounded-md h-fit"
-              onClick={toggleSidebar}
-            >
-              {isSidebarOpen ? <FaTimes /> : <FaBars />}
-            </button>
-            <img src="/logo.png" alt="logo do site" className="w-16 lg:w-20"/>
-          </div>
+          {isLogin && (
+            <div className="flex justify-between p-2 bg-white shadow-md ">
+              <button
+                className="p-2 my-auto text-blue-500 transition-all duration-300 bg-white border rounded-md h-fit"
+                onClick={toggleSidebar}
+              >
+                {isSidebarOpen ? <FaTimes /> : <FaBars />}
+              </button>
+              <img
+                src="/logo.png"
+                alt="logo do site"
+                className="w-16 lg:w-20"
+              />
+            </div>
+          )}
           <div className="p-4">
             <Routes>
               <Route
