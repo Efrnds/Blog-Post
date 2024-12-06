@@ -36,7 +36,11 @@ export default function Safe() {
                     </p>
                     <p><strong>Descentraliza a Tomada de Decisões: </strong>A descentralização permite que as equipes tomem decisões mais rápidas e informadas, ao mesmo tempo que os líderes preservam a autoridade para questões estratégicas.
                     </p>
-
+                    <br />
+                    <h1>Conclusão</h1>
+                    <p>O SAFe oferece uma abordagem sólida e estruturada para empresas que desejam adotar práticas ágeis em larga escala e garantir uma entrega contínua de valor. No entanto, sua implementação exige cuidado, paciência e uma transformação cultural significativa em toda a organização. Seus princípios e práticas, quando seguidos de forma adequada, criam um ambiente de colaboração, transparência e execução eficiente.
+                        Se você está considerando a adoção do SAFe, é essencial avaliar as necessidades específicas da sua empresa e escolher a abordagem que mais se alinha aos seus objetivos. Com o suporte certo, que inclui ferramentas, treinamentos e comprometimento de todos os envolvidos, o SAFe pode ser um grande aliado na jornada para tornar sua organização mais ágil, competitiva e capaz de se adaptar rapidamente às mudanças do mercado.
+                    </p>
                 </div>
             </div>
 
