@@ -1,37 +1,50 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import About from "./About";
 import Login from "./Login";
 import Home from "./home";
 import Sidebar from "./Sidebar";
 import Safe from "./Safe";
 import Contact from "./Contact";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  // Adiciona a classe overflow-hidden quando a sidebar estiver aberta
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isSidebarOpen]);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   return (
     <BrowserRouter>
       <div className="relative flex h-screen">
-        <Sidebar isOpen={isSidebarOpen} />
+        <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         <main
           className={`flex-1 transition-all duration-300 ease-in-out ${
-            isSidebarOpen ? "ml-64" : "ml-0"
+            isSidebarOpen ? "ml-0 md:ml-64" : "ml-0"
           }`}
         >
           {isLogin && (
-            <div className="flex justify-between p-2 bg-white shadow-md ">
+            <div className="flex justify-between p-2 bg-white shadow-md">
               <button
                 className="p-2 my-auto text-blue-500 transition-all duration-300 bg-white border rounded-md h-fit"
                 onClick={toggleSidebar}
               >
-                {isSidebarOpen ? <FaTimes /> : <FaBars />}
+                <FaBars />
               </button>
               <img
                 src="/logo.png"
