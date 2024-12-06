@@ -22,6 +22,12 @@ export default function Safe() {
             contínua.
           </p>
           <br />
+          <img
+            className="w-1/2 mx-auto"
+            src="public/img1.svg"
+          />
+
+          <br />
           <h1>O que é o SAFe?</h1>
           <p>
             O Scaled Agile Framework (SAFe) é um conjunto de boas práticas e
@@ -77,7 +83,7 @@ export default function Safe() {
           </p>
           <br />
           <PropagandaTexto />
-          <h1>Os Principios do SAFe</h1>
+          <h1>Os Princípios do SAFe</h1>
           <p>
             O SAFe é guiado por uma série de princípios que visam transformar a
             maneira como as empresas tomam decisões e operam:
@@ -149,7 +155,40 @@ export default function Safe() {
             <PropagandaHorizontal />
           </div>
           <br />
+          <h1>Como Implementar o SAFe em Sua Organização?</h1>
+          <p>
+            Implementar o SAFe requer um planejamento cuidadoso, treinamento
+            adequado e o envolvimento de todos os níveis da organização. Algumas
+            das etapas essenciais para a implementação do SAFe incluem:
+          </p>
+          <ul>
+            <li>
+              <strong>Treinamento e Capacitação:</strong> Investir em cursos e
+              certificações para líderes e equipes é crucial para garantir a
+              correta aplicação dos princípios do SAFe.
+            </li>
+            <li>
+              <strong>Definição de Papéis e Responsabilidades:</strong>{" "}
+              Assegurar que todos os membros da equipe entendam seus papéis
+              dentro do framework e como interagem com outros grupos é essencial
+              para o sucesso da implementação.
+            </li>
+            <li>
+              <strong>Integração com Outros Frameworks:</strong> Muitas empresas
+              já utilizam outros métodos ágeis. O SAFe pode ser integrado a
+              esses frameworks existentes, criando um modelo híbrido que combine
+              o melhor dos dois mundos.
+            </li>
+            <li>
+              <strong>Foco na Melhoria Contínua:</strong> A adoção do SAFe não é
+              um evento único, mas uma jornada contínua. Monitoramento,
+              adaptação e ajustes frequentes são fundamentais para alcançar os
+              melhores resultados.
+            </li>
+          </ul>
           <h1>Conclusão</h1>
+          <img className="mx-auto" src="public/img2.png" />
+
           <p>
             O SAFe oferece uma abordagem sólida e estruturada para empresas que
             desejam adotar práticas ágeis em larga escala e garantir uma entrega
