@@ -144,50 +144,56 @@ export default function App() {
                   </main>
                   {isLogin && (
                     <footer className="bg-gray-800 text-white py-6">
-                    <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                      {}
-                      <div className="text-xs sm:text-sm text-center sm:text-left">
-                        <p>AGILE ©2024 | TODOS OS DIREITOS RESERVADOS</p>
+                      <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
+                        {/* Espécie de espaçador vazio, caso seja necessário algum outro conteúdo */}
+                        <div className="w-full sm:w-auto"></div>
+
+                        <div className="text-xs sm:text-sm text-center sm:text-left mt-4 sm:mt-0">
+                          <p>AGILE ©2024 | TODOS OS DIREITOS RESERVADOS</p>
+                        </div>
+
+                        {/* Espaço vazio à direita, caso necessário */}
+                        <div className="w-full sm:w-auto"></div>
+
+                        <div className="text-xs sm:text-sm text-center sm:text-right mt-4 sm:mt-0">
+                          <p>
+                            Projeto desenvolvido por:{" "}
+                            <a
+                              href="https://www.github.com/cauadsm"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-400 hover:text-blue-600"
+                            >
+                              @cauadsm
+                            </a>{" "}
+                            e{" "}
+                            <a
+                              href="https://www.github.com/efrnds"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-400 hover:text-blue-600"
+                            >
+                              @efrnds
+                            </a>
+                          </p>
+                        </div>
                       </div>
-                  
-                      {}
-                      <div className="text-xs sm:text-sm text-right">
-                        <p>
-                          Esse projeto foi desenvolvido por:{" "}
-                          <a
-                            href="https://www.github.com/cauadsm"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-400 hover:text-blue-600"
-                          >
-                            @cauadsm
-                          </a>{" "}
-                          e{" "}
-                          <a
-                            href="https://www.github.com/efrnds"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-400 hover:text-blue-600"
-                          >
-                            @efrnds
-                          </a>
-                        </p>
+
+                      {/* Bloco com horário local e último update */}
+                      <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between sm:justify-end text-xs sm:text-sm text-center sm:text-right mt-4">
+                        <div className="mr-0 sm:mr-6 mb-4 sm:mb-0">
+                          <p className="font-semibold">HORA LOCAL</p>
+                          <p>{time}</p>
+                        </div>
+                        <div>
+                          <p className="font-semibold">ÚLTIMO UPDATE</p>
+                          <p>
+                            {new Date(lastUpdated).toLocaleDateString("pt-BR")}
+                          </p>{" "}
+                          {/* Formatação da data para DD/MM/AAAA */}
+                        </div>
                       </div>
-                    </div>
-                  
-                    {}
-                    <div className="max-w-7xl mx-auto px-6 flex justify-end text-xs sm:text-sm text-right mt-4">
-                      <div className="mr-6">
-                        <p className="font-semibold">HORA LOCAL</p>
-                        <p>{time}</p>
-                      </div>
-                      <div>
-                        <p className="font-semibold">ÚLTIMO UPDATE</p>
-                        <p>{new Date(lastUpdated).toLocaleDateString("pt-BR")}</p> {/* Formatação da data para DD/MM/AAAA */}
-                      </div>
-                    </div>
-                  </footer>
-                  
+                    </footer>
                   )}
                 </div>
               </>

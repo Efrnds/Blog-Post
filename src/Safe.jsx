@@ -22,7 +22,7 @@ export default function Safe() {
             contínua.
           </p>
           <br />
-          <img className="w-1/2 mx-auto" src="/img1.svg" />
+          <img className="w-full sm:w-1/2 mx-auto" src="/img1.svg" />
 
           <br />
           <h1>O que é o SAFe?</h1>
